@@ -15,4 +15,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "netdoctor"
 include(":app")
- 
+include(":netdoctor")

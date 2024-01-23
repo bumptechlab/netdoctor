@@ -11,6 +11,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.vest.sdk.netdoctor.ui.theme.NetdoctorTheme
+import com.net.doctor.NetDoctor
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,6 +27,8 @@ class MainActivity : ComponentActivity() {
                 }
             }
         }
+
+        NetDoctor.dnscheck("game.megacasino.club")
     }
 }
 
