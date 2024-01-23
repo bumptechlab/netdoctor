@@ -32,7 +32,7 @@ class NetDoctor {
                 //使用指定DNS服务查询IP
                 dns.forEach {
                     val dnsIpList = dnslookup(domain, it)
-                    Log.d(TAG, "$domain: dnsIp $dnsIpList")
+                    Log.d(TAG, "$domain: dns ip $dnsIpList")
                     if (dnsIpList.isNotEmpty()) {
                         ipList.add(dnsIpList)
                     }
@@ -43,7 +43,7 @@ class NetDoctor {
                 defaultIpAddress.forEach {
                     defaultIpList.add(it.hostAddress)
                 }
-                Log.d(TAG, "$domain: default ips $defaultIpList")
+                //Log.d(TAG, "$domain: local dns ip $defaultIpList")
                 if (defaultIpList.isNotEmpty()) {
                     ipList.add(defaultIpList)
                 }
