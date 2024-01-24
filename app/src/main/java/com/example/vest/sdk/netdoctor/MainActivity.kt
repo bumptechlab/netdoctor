@@ -31,7 +31,10 @@ class MainActivity : ComponentActivity() {
                 }
             }
         }
-        val domain = "game.megacasino.club"
+        checkDomain("www.baidu.com")
+    }
+
+    fun checkDomain(domain: String) {
         NetDoctor()
             .withDns("114.114.114.114")//内置了四个公共DNS服务器地址，使用withDns也可以增加
             .dnscheck(domain, object : NetReport {

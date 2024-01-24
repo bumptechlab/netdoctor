@@ -63,6 +63,6 @@ dependencies {
     implementation(project(":netdoctor"))
 
     //发布后引用远程仓库
-    //implementation("io.github.bumptechlab:netdoctor:1.0.0-SNAPSHOT")
+    //implementation("io.github.bumptechlab:netdoctor:1.0.0")
 
 }

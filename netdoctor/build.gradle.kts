@@ -4,7 +4,7 @@ plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
     //发布到远程仓库需要用到此插件
-    id("com.vanniktech.maven.publish") version "0.23.0"
+    id("com.vanniktech.maven.publish") version "0.27.0"
 }
 
 android {
