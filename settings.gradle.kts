@@ -10,6 +10,8 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        //maven快照
+        maven { setUrl("https://s01.oss.sonatype.org/content/repositories/snapshots/") }
     }
 }
 
