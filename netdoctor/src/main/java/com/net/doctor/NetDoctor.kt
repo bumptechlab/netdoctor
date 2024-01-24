@@ -29,13 +29,14 @@ class NetDoctor {
         return this
     }
 
-    fun dnscheck(domain: String, report: NetReport?) {
+    fun dnscheck(domain: String, report: NetReport?): NetDoctor {
         GlobalScope.launch() {
+            Log.d(TAG, "start looking up ip for domain[$domain] on dns server: $dns")
             val ipList = mutableListOf<List<String>>()
             //使用指定DNS服务查询IP
             dns.forEach {
                 val dnsIpList = dnslookup(domain, it)
-                Log.d(TAG, "$domain: dns ip $dnsIpList")
+                Log.d(TAG, "dns[$it] lookup result: $domain -> $dnsIpList")
                 if (dnsIpList.isNotEmpty()) {
                     ipList.add(dnsIpList)
                 }
@@ -46,20 +47,21 @@ class NetDoctor {
             defaultIpAddress.forEach {
                 defaultIpList.add(it.hostAddress)
             }
-            //Log.d(TAG, "$domain: local dns ip $defaultIpList")
+            Log.d(TAG, "dns[local] lookup result: $domain -> $defaultIpList")
             if (defaultIpList.isNotEmpty()) {
                 ipList.add(defaultIpList)
             }
-            Log.d(TAG, "ip list: $ipList")
+            Log.d(TAG, "dns lookup ip list: $domain -> $ipList")
             //不同DNS服务查询到的IP都是一样，认为被劫持
             if (ipListSame(ipList)) {
-                Log.d(TAG, "ip list is all same")
+                Log.d(TAG, "ip list is all the same")
                 report?.onReport(true)
             } else {
-                Log.d(TAG, "ip list is not all same")
+                Log.d(TAG, "ip list is not all the same")
                 report?.onReport(false)
             }
         }
+        return this
     }
 
     private fun ipListSame(ipList: List<List<String>>): Boolean {
