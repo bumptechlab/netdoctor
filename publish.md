@@ -27,3 +27,9 @@
 ```
 ./gradlew publishAndReleaseToMavenCentral --no-configuration-cache
 ```
+
+- 发布到远程仓库：私服（${rootDir}/repo）
+
+```
+./gradlew publishAllPublicationsToLocal
+```

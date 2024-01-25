@@ -1,0 +1,130 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "io.github.bumptechlab",
+    "module": "netdoctor",
+    "version": "1.0.2",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.0"
+    }
+  },
+  "variants": [
+    {
+      "name": "releaseVariantReleaseApiPublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-api"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-jdk8",
+          "version": {
+            "requires": "1.8.10"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "netdoctor-1.0.2.aar",
+          "url": "netdoctor-1.0.2.aar",
+          "size": 8033,
+          "sha512": "f858c02feb6f0df54b2e6def1cfed3d1f72d2590df63d21535a1e89cbe1ceef7eaf5394bbdc4b2fe99b874d700918aa04e7bee4d03c9ddbd6cde2922a72c9b10",
+          "sha256": "8cfb638320d0a74da5872703dc6ecba4e2f1908456fa443039ad0ff64d46e374",
+          "sha1": "c8d14a7831225e79cf3b6615ea53101a994c838d",
+          "md5": "c5a685037f2993b2248e4ec271e5f054"
+        }
+      ]
+    },
+    {
+      "name": "releaseVariantReleaseRuntimePublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "dnsjava",
+          "module": "dnsjava",
+          "version": {
+            "requires": "3.5.3"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-android",
+          "version": {
+            "requires": "1.6.4"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-jdk8",
+          "version": {
+            "requires": "1.8.10"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "netdoctor-1.0.2.aar",
+          "url": "netdoctor-1.0.2.aar",
+          "size": 8033,
+          "sha512": "f858c02feb6f0df54b2e6def1cfed3d1f72d2590df63d21535a1e89cbe1ceef7eaf5394bbdc4b2fe99b874d700918aa04e7bee4d03c9ddbd6cde2922a72c9b10",
+          "sha256": "8cfb638320d0a74da5872703dc6ecba4e2f1908456fa443039ad0ff64d46e374",
+          "sha1": "c8d14a7831225e79cf3b6615ea53101a994c838d",
+          "md5": "c5a685037f2993b2248e4ec271e5f054"
+        }
+      ]
+    },
+    {
+      "name": "releaseVariantReleaseSourcePublication",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "netdoctor-1.0.2-sources.jar",
+          "url": "netdoctor-1.0.2-sources.jar",
+          "size": 2262,
+          "sha512": "d770c791fa361a734ae18a372deb87131ed64aba8bc6f55be47c30c072c1a687b9fb3179efbfef444e2dd3e72d99c398a325328fc823f8b1c6890db875398405",
+          "sha256": "5c62e79c5196990d72aac2bc971ad678f54c09c823d519d021c421db60edbb08",
+          "sha1": "dd2871f5469e613b909b83162b07c9198f2cb7ca",
+          "md5": "f7248a0b4569f9387240d4d316da8804"
+        }
+      ]
+    },
+    {
+      "name": "releaseVariantReleaseJavaDocPublication",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "javadoc",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "netdoctor-1.0.2-javadoc.jar",
+          "url": "netdoctor-1.0.2-javadoc.jar",
+          "size": 269527,
+          "sha512": "97c3871b62c672c704ccf45aab85e1241fd546296adfe50e9775fef798f1dd4b5343af13b910b8fb1795677f50b7316b9ef8e8d21a746475430354e7f6820dff",
+          "sha256": "49e4ef1db73ebabb5d9a2a0103d91c85bb37ece38851aaea600719e80ddb5d90",
+          "sha1": "4a28b6231a7f5dbd169c7cd18ac787e013eaef9f",
+          "md5": "b402cb85a82b1ba5c538cf941492524c"
+        }
+      ]
+    }
+  ]
+}
