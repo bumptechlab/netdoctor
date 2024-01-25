@@ -36,7 +36,9 @@ class MainActivity : ComponentActivity() {
 
     fun checkDomain(domain: String) {
         NetDoctor()
-            .withDns("114.114.114.114")//内置了四个公共DNS服务器地址，使用withDns也可以增加
+            //114DNS：114.114.114.114
+            //阿里公共DNS解析服务：223.5.5.5
+            //.withDns("114.114.114.114", "223.5.5.5")//可以自定义dns服务器用于替换内置dns服务
             .dnscheck(domain, object : NetReport {
                 override fun onReport(isDnsHijack: Boolean) {
                     if (isDnsHijack) {

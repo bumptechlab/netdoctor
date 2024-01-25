@@ -24,11 +24,20 @@ class NetDoctor {
         "216.146.36.36",//ORACLE Dyn Public DNS
     )
 
-    fun withDns(vararg dnsIp: String): NetDoctor {
-        dns.addAll(dnsIp)
+    /**
+     * replace all inner dns servers
+     */
+    fun withDns(vararg dnsServers: String): NetDoctor {
+        if (dnsServers.isNotEmpty()) {
+            dns.clear()
+            dns.addAll(dnsServers)
+        }
         return this
     }
 
+    /**
+     * start detecting dns hijacking for specified domain
+     */
     fun dnscheck(domain: String, report: NetReport?): NetDoctor {
         GlobalScope.launch() {
             Log.d(TAG, "start looking up ip for domain[$domain] on dns server: $dns")
