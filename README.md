@@ -28,6 +28,8 @@
     Name:	www.a.shifen.com
     Address: 180.101.50.242
     ```
+- 更多DNS知识：   
+https://blog.csdn.net/crazymakercircle/article/details/120521694
 - SDK内置了四个全球比较有名的DNS服务器，也可以自行修改内置DNS服务器。
 
 | DNS服务商                | DNS服务器地址       |
