@@ -1,10 +1,8 @@
 package com.net.doctor
 
 import android.util.Log
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
-import org.xbill.DNS.Address
 import org.xbill.DNS.DClass
 import org.xbill.DNS.Message
 import org.xbill.DNS.Name
@@ -62,7 +60,7 @@ class NetDoctor {
             }
             Log.d(TAG, "dns lookup ip list: $domain -> $ipList")
             //不同DNS服务查询到的IP都是一样，认为被劫持
-            if (ipListSame(ipList)) {
+            if (isIpListSame(ipList)) {
                 Log.d(TAG, "ip list is all the same")
                 report?.onReport(true)
             } else {
@@ -73,16 +71,17 @@ class NetDoctor {
         return this
     }
 
-    private fun ipListSame(ipList: List<List<String>>): Boolean {
-        if (ipList.size >= 2) {
-            for ((i, ipList1) in ipList.withIndex()) {
-                for ((k, ip1) in ipList1.withIndex()) {
-                    for ((j, ipList2) in ipList.withIndex()) {
-                        if (i != j) {
-                            Log.d(TAG, "compare ip[$i][$k]: $ip1 with ip_list[$j]-$ipList2")
-                            if (!ipList2.contains(ip1)) {
-                                return false
-                            }
+    private fun isIpListSame(ipList: List<List<String>>): Boolean {
+        if (ipList.size < 2) {
+            return false
+        }
+        for ((i, ipList1) in ipList.withIndex()) {
+            for ((k, ip1) in ipList1.withIndex()) {
+                for ((j, ipList2) in ipList.withIndex()) {
+                    if (i != j) {
+                        Log.d(TAG, "compare ip[$i][$k]: $ip1 with ip_list[$j]-$ipList2")
+                        if (!ipList2.contains(ip1)) {
+                            return false
                         }
                     }
                 }

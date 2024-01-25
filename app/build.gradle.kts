@@ -60,9 +60,9 @@ dependencies {
     implementation("androidx.compose.material3:material3")
 
     //开发阶段引用本地模块:netdoctor
-    //implementation(project(":netdoctor"))
+    implementation(project(":netdoctor"))
 
     //发布后引用远程仓库
-    implementation("io.github.bumptechlab:netdoctor:1.0.1")
+    //implementation("io.github.bumptechlab:netdoctor:1.0.2")
 
 }
